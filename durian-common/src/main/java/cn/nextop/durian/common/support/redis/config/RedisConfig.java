@@ -2,6 +2,7 @@ package cn.nextop.durian.common.support.redis.config;
 
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.interceptor.CacheErrorHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -15,10 +16,21 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
+import cn.nextop.durian.common.support.redis.CacheErrorHandlerEx;
+
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
-
+	
+    @Override
+    public CacheErrorHandler errorHandler() {
+        return new CacheErrorHandlerEx();
+    }
+    
+	protected RedisSerializer<Object> getRedisSerializer() {
+		return new GenericJackson2JsonRedisSerializer();
+	}
+	
 	/**
 	 * 
 	 */
@@ -30,10 +42,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());
         template.setConnectionFactory(factory); template.afterPropertiesSet(); return template;
-	}
-	
-	public RedisSerializer<Object> getRedisSerializer() {
-		return new GenericJackson2JsonRedisSerializer();
 	}
 	
 	/**
