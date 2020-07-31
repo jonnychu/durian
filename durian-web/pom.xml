@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<parent>
+		<groupId>cn.nextop.durian</groupId>
+		<artifactId>durian-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<name>Durian Web</name>
+	<packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>durian-web</artifactId>
+	
+	<modules>
+		<module>durian-web-service</module>
+	</modules>
+</project>
