@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.nextop.durian.common.support.redis.RedisUtil;
 
-@RequestMapping("/redis")
 @RestController
+@RequestMapping("/redis")
 public class RedisController {
 
 	@Resource
 	private RedisUtil redisUtil;
-
+	
 	@RequestMapping("set")
-	public boolean redisset(String key, String value) {
+	public boolean redisset(String key, String v1) {
 		UserEntity userEntity = new UserEntity();
 		userEntity.setId(Long.valueOf(1));
 		userEntity.setGuid(String.valueOf(1));
