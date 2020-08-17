@@ -15,6 +15,7 @@
 		<module>durian-startup</module>
 		<module>durian-web</module>
 		<module>durian-batch</module>
+		<module>durian-api</module>
 	</modules>
 
 	<properties>
