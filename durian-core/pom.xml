@@ -39,6 +39,12 @@
 			<version>1.1.23</version>
 		</dependency>
 		
+		<!-- Mysql driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
 		<!-- Mybatis -->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
