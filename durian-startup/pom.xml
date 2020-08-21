@@ -16,6 +16,12 @@
 		<dependency>
 			<groupId>cn.nextop.durian</groupId>
 			<version>${project.version}</version>
+			<artifactId>durian-api-service</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.nextop.durian</groupId>
+			<version>${project.version}</version>
 			<artifactId>durian-web-service</artifactId>
 		</dependency>
 	</dependencies>
